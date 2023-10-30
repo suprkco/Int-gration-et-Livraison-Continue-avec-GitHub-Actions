@@ -26,4 +26,4 @@ jobs:
 
       # Build and test your app using Maven
       - name: Build and test with Maven
-        run: mvn clean verify --file ./path/to/your/pom.xml
+        run: mvn clean verify --file ./simple-api/pom.xml
