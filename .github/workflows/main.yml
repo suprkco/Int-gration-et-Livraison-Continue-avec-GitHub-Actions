@@ -42,19 +42,19 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./simple-api
-          tags:  ${{ secrets.DOCKERHUB_USERNAME }}/TP2-cicd:simple-api
+          tags:  ${{ secrets.DOCKERHUB_USERNAME }}/tp2-cicd:simple-api
           push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push database
         uses: docker/build-push-action@v3
         with:
           context: ./database
-          tags:  ${{ secrets.DOCKERHUB_USERNAME }}/TP2-cicd:database
+          tags:  ${{ secrets.DOCKERHUB_USERNAME }}/tp2-cicd:database
           push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push http-server
         uses: docker/build-push-action@v3
         with:
           context: ./http-server
-          tags:  ${{ secrets.DOCKERHUB_USERNAME }}/TP2-cicd:http-server
+          tags:  ${{ secrets.DOCKERHUB_USERNAME }}/tp2-cicd:http-server
           push: ${{ github.ref == 'refs/heads/main' }}
