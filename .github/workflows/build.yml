@@ -1,4 +1,4 @@
-name: SonarCloud
+name: CI devops 2023 - Build
 on:
   push:
     branches:
@@ -34,4 +34,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=suprkco_Int-gration-et-Livraison-Continue-avec-GitHub-Actions
+        run: |
+          cd simple-api
+          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=suprkco_Int-gration-et-Livraison-Continue-avec-GitHub-Actions
